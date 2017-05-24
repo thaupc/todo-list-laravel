@@ -40,7 +40,18 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">Hey, add your task to the list</div>
+                @if(count($errors)>0)
+                    <!-- Errors list -->
+                    <div class="alert alert-danger">
+                        <strong> Oops, error: </strong>
+                        
+                            @foreach($errors->all() as $error)
+                                 {{$error}} 
+                            @endforeach
+                        
+                    </div>
+                @endif
             </div>
         </div>
     </body>
